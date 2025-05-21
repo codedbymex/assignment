@@ -1,0 +1,39 @@
+base_url: "https://webscraper.io"
+
+global:
+  category: "laptops"
+  output_dir: "output"
+  output_format: "json"
+  logging_level: INFO # DEBUG, ERROR, CRITICAL, NOTSET, INFO
+  structured_products_data: true
+
+browser:
+  name: "chrome"
+  headed: false
+  window_size: [1440, 1800] # [800, 600] will show the privacy term and hide the load more button
+  implicitly_wait: 0
+  disable_extensions: true
+  disable_gpu: true
+  log_level: 3
+  disable_dev_shm_usage: true
+  no_sandbox: true
+  scroll_into_view_before_click: true
+  wait_after_click_ms: 0
+
+products:
+  category_url: "/test-sites/e-commerce/more/computers/"
+  selectors:
+    product_card: ".thumbnail"
+    name: ".title"
+    price: ".price"
+    reviews: "div.ratings p.pull-right"
+    rating: "div.ratings p:nth-of-type(2) span.ws-icon-star"
+    description: ".description"
+    product_link: ".title"
+    load_more: "ecomerce-items-scroll-more"
+  max_retry_load_more: 5
+  max_load_more_idle_clicks: 5
+  load_more_button_wait_time: 5
+  load_cards_wait_time: 5
+  currency_rates: {RON: 5.0}
+  target_currency: "RON"
