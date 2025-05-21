@@ -1,4 +1,4 @@
-# Crisp Web Data Extraction Assignment
+# Web Data Extraction Assignment
 
 ## Prerequisites
 
